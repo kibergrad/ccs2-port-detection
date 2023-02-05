@@ -15,7 +15,7 @@
 #### Libraries Used  
 ##### TensorFlow, Keras, Pandas, Numpy
 #### Dataset Size 
-#####Approx 500 images
+##### Approx 500 images
 #### Dataset Creation 
 ##### Images were taken from a distance of 20cm from the camera at different yaw (-30 to 30 with a difference of 0.5 degrees each), pitch (0, 2, 4 and -10 degrees) with zero roll (because other than 0 degree, other angles for roll not possible).
 #### Dataset Split
