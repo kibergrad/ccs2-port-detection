@@ -13,7 +13,7 @@
 ### Charging Port Orientation
 ##### This folder contains the Custom CNN Regression model and dataset made by us for estimating the orientation of the Charging Port.
 #### Libraries Used  
-#####TensorFlow, Keras, Pandas, Numpy
+##### TensorFlow, Keras, Pandas, Numpy
 #### Dataset Size 
 #####Approx 500 images
 #### Dataset Creation 
