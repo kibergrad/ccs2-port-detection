@@ -133,3 +133,9 @@ The following features are implemented in the simulation:
 - Run YOLOv5 detection model in the simulation.
 - A ROS node publishing orientation of the plug.
 - Test various approaches to check their robustness in various real world situations.
+
+## Geometric Approach
+This folder contains the files required for the geometric approach used for orientation estimation of Charging port.
+
+## Graphs
+This folder contains all the computer vision graphs acquired during solving the problem statement.
