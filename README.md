@@ -123,3 +123,13 @@ Mean Sqaured Error
 - Mean Error ~ 0.46 degree
 
 ![Port Orientation Graph](PortOrientationGraph.png)
+
+## plug_test
+This ROS Package is used to test the CV models and algorithms present in this repository.
+
+The following features are implemented in the simulation:
+- A custom model of the CCS2 charging plug is spawned.
+- A ROS service that can give the depth of any pixel in the image using different approaches.
+- Run YOLOv5 detection model in the simulation.
+- A ROS node publishing orientation of the plug.
+- Test various approaches to check their robustness in various real world situations.
