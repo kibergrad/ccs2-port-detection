@@ -1,4 +1,4 @@
-# InterIIT-IITK JLR Open CV
+# InterIIT JLR Open CV
 #### This repository contains all the files involved in solving the Computer Vision Part of the JLR Problem Statement in InterIIT Techmeet 11.0.
 
 ## Charging Port Detection
@@ -38,7 +38,7 @@
 ##### TensorFlow, Keras, Pandas, Numpy
 
 ### Dataset Creation and augumentation
-##### Images have been taken from a distance of 20cm from the camera at different yaw (-30 to 30 with a difference of 0.5 degrees each), pitch (0, 2, 4 and -10 degrees) with zero roll (because other than 0 degree, other angles for roll not possible). Images have been augumented with a rotation angle of range 3 degrees, width and height shift range of 0.05 and zoom range from 75% to 100%.
+##### CCS2 port images have been taken from a distance of 20cm from the camera at various yaw angles (-30 to 30 with a difference of 0.5 degrees each), pitch angles (0, 2, 4 and -10 degrees) and with zero roll (because other than 0 degree, other angles for roll not possible). Images have been augumented with a rotation angle of range 3 degrees, width and height shift range of 0.05 and zoom range from 75% to 100%.
 
 ### Dataset Split
 ##### Training Dataset - 99.9%
