@@ -10,7 +10,7 @@ Yolov5 has been used to detect the CCS2 charging port. Yolo model detects the po
 `Pytorch`
 
 ### Dataset creation
-The images of the CCS2 charging port were taken from various angles and at different distances from the camera, for the purpose of capturing a comprehensive representation of the port's design and appearance. 
+The images of the CCS2 charging port have been taken from various angles and at different distances from the camera, for the purpose of capturing a comprehensive representation of the port's design and appearance. 
 
 ### Data Augumentions
 - Adaptive Equalization
