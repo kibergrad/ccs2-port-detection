@@ -6,6 +6,8 @@
 
 #### Yolov5 has been used to detect the CCS2 charging port. Yolo model detects the port and a bounding box is generated. The coordinates of bounding box is used to get the approximate center of the charging port. 
 
+### Libraries Used
+##### Pytorch
 ### Dataset creation
 ##### The images of the CCS2 charging port were taken from various angles and at different distances from the camera, for the purpose of capturing a comprehensive representation of the port's design and appearance. 
 
@@ -35,7 +37,7 @@
 ##### This folder contains the Custom CNN Regression model and dataset made by us for estimating the orientation of the Charging Port.
 
 ### Libraries Used  
-##### TensorFlow, Keras, Pandas, Numpy
+##### TensorFlow Keras, Pandas, Numpy
 
 ### Dataset Creation and augumentation
 ##### CCS2 port images have been taken from a distance of 20cm from the camera at various yaw angles (-30 to 30 with a difference of 0.5 degrees each), pitch angles (0, 2, 4 and -10 degrees) and with zero roll (because other than 0 degree, other angles for roll not possible). Images have been augumented with a rotation angle of range 3 degrees, width and height shift range of 0.05 and zoom range from 75% to 100%.
