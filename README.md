@@ -32,9 +32,6 @@ The images of the CCS2 charging port have been taken from various angles and at 
 ### Accuracy - 92%+
 - Maximum mAP50-90 = 0.995
 
-![Port Detection Optimisation](PortDetectionGraph.png)
-
-
 ## Charging Port Orientation
 This folder contains the Custom CNN Regression model and dataset made by us for estimating the orientation of the Charging Port.
 
@@ -122,8 +119,6 @@ Mean Sqaured Error
 - Mean Roll Error ~ 0.11 degree
 - Mean Error ~ 0.46 degree
 
-![Port Orientation Graph](PortOrientationGraph.png)
-
 ## plug_test
 This ROS Package is used to test the CV models and algorithms present in this repository.
 
@@ -139,3 +134,7 @@ This folder contains the files required for the geometric approach used for orie
 
 ## Graphs
 This folder contains all the computer vision graphs acquired during solving the problem statement.
+
+## Triangulation Approach
+This folder contains code and images showing the Triangulation approach for estimating depth of the charging port.
+In this approach we require the orientation of port beforehand and then we use similarity of triangles to compare the area vs depth ratio for getting the depth
