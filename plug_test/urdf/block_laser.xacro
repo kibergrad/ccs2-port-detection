@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="block_laser">
+	<xacro:property name="cameralen" value="0.04" />
+	<xacro:property name="camerawid" value="0.02" />
+	<xacro:property name="camerahgt" value="0.02" />
+	<xacro:property name="cameramass" value="0.05" />
+	<xacro:property name="duo_width" value="0.06" />
+
+	<xacro:include filename="duo_cam.materials" />
+
+	<link name="base_link">
+	</link>
+
+	<xacro:macro name="camera_geometry">
+		<geometry>
+			<box size="${cameralen} ${camerawid} ${camerahgt}" />
+		</geometry>
+	</xacro:macro>
+
+	<link name="block_laser">
+		<inertial>
+			<mass value="${cameramass}" />
+			<inertia 
+				ixx="${cameramass * ((camerahgt*camerahgt)+(cameralen*cameralen)) / 12}"
+				iyy="${cameramass * ((camerahgt*camerahgt)+(camerawid*camerawid)) / 12}"
+				izz="${cameramass * ((cameralen*cameralen)+(camerawid*camerawid)) / 12}"
+				ixy="0"
+				ixz="0"
+				iyz="0"
+			/>
+		</inertial>
+		<visual>
+			<xacro:camera_geometry />
+			<material name="orange" />
+		</visual>
+		<collision>
+			<xacro:camera_geometry />
+		</collision>
+	</link>
+	<joint name="block_laser_joint" type="fixed">
+		<origin xyz="0 0 0" />
+		<parent link="base_link" />
+		<child link="block_laser" />
+	</joint>
+
+	<xacro:include filename="block_laser.gazebo" />
+</robot>

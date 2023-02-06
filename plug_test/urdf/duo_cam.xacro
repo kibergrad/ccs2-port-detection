@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="duo_camera">
+	<xacro:property name="cameralen" value="0.04" />
+	<xacro:property name="camerawid" value="0.02" />
+	<xacro:property name="camerahgt" value="0.02" />
+	<xacro:property name="cameramass" value="0.05" />
+	<xacro:property name="duo_width" value="0.06" />
+
+	<xacro:include filename="duo_cam.materials" />
+
+	<link name="base_link">
+	</link>
+
+	<xacro:macro name="camera_geometry">
+		<geometry>
+			<box size="${cameralen} ${camerawid} ${camerahgt}" />
+		</geometry>
+	</xacro:macro>
+
+	<xacro:macro name="camera_n_joint" params="prefix reflect">
+		<link name="${prefix}_cam">
+			<inertial>
+				<mass value="${cameramass}" />
+				<inertia 
+					ixx="${cameramass * ((camerahgt*camerahgt)+(cameralen*cameralen)) / 12}"
+					iyy="${cameramass * ((camerahgt*camerahgt)+(camerawid*camerawid)) / 12}"
+					izz="${cameramass * ((cameralen*cameralen)+(camerawid*camerawid)) / 12}"
+					ixy="0"
+					ixz="0"
+					iyz="0"
+				/>
+			</inertial>
+			<visual>
+				<xacro:camera_geometry />
+				<material name="blue" />
+			</visual>
+			<collision>
+				<xacro:camera_geometry />
+			</collision>
+		</link>
+		<joint name="${prefix}_cam_joint" type="fixed">
+			<origin xyz="0 ${reflect * duo_width / 2} 0" />
+			<parent link="base_link" />
+			<child link="${prefix}_cam" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:camera_n_joint prefix="left" reflect="1" />
+	<xacro:camera_n_joint prefix="right" reflect="-1" />
+
+	<xacro:include filename="duo_cam.gazebo" />
+</robot>

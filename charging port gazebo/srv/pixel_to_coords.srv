@@ -1,4 +1,0 @@
-int64 x
-int64 y
----
-geometry_msgs/Point point

@@ -1,0 +1,515 @@
+<?xml version="1.0" ?>
+<robot name="plug_socket" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find plug_test)/urdf/materials.xacro" />
+<xacro:include filename="$(find plug_test)/urdf/plug_socket.trans" />
+<xacro:include filename="$(find plug_test)/urdf/plug_socket.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="3.796503005933315e-09 -0.0007312076854644843 -0.04031263628920165" rpy="0 0 0"/>
+    <mass value="5.475788709094364"/>
+    <inertia ixx="0.010551" iyy="0.007818" izz="0.006815" ixy="-0.0" iyz="0.000244" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque777777"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <!-- <mesh filename="package://plug_test/meshes/base_link.stl" scale="0.001 0.001 0.001"/> -->
+      <box size="0.1 0.14 0.14"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component8_1">
+  <inertial>
+    <origin xyz="-1.9468628098540108e-13 -2.0816681711721685e-17 0.004836206896551742" rpy="0 0 0"/>
+    <mass value="0.00023839452252989463"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component8_2">
+  <inertial>
+    <origin xyz="-1.9471750600796867e-13 -2.0816681711721685e-17 0.004836206896551738" rpy="0 0 0"/>
+    <mass value="0.00023839452252989463"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component8_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component8_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component9_4">
+  <inertial>
+    <origin xyz="3.469446951953614e-18 -2.7755575615628914e-17 0.004871199697924683" rpy="0 0 0"/>
+    <mass value="0.0009602983078098164"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component9_2">
+  <inertial>
+    <origin xyz="3.8163916471489756e-17 -2.5153490401663703e-17 0.004871199697924707" rpy="0 0 0"/>
+    <mass value="0.0009602983078098164"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component9_1">
+  <inertial>
+    <origin xyz="8.881784197001253e-18 -1.0408340855860843e-17 0.004871199697924709" rpy="0 0 0"/>
+    <mass value="0.0009602983078098164"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component9_5">
+  <inertial>
+    <origin xyz="3.469446951953614e-18 -1.0408340855860843e-17 0.004871199697924702" rpy="0 0 0"/>
+    <mass value="0.0009602983078098164"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component9_3">
+  <inertial>
+    <origin xyz="1.5612511283791264e-17 -7.806255641895632e-18 0.004871199697924709" rpy="0 0 0"/>
+    <mass value="0.0009602983078098164"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component9_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component10_1">
+  <inertial>
+    <origin xyz="-5.722540497021811e-13 6.938893903907228e-18 0.004936001117135472" rpy="0 0 0"/>
+    <mass value="0.0021901450942100275"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component10_2">
+  <inertial>
+    <origin xyz="-5.722471108082772e-13 6.938893903907228e-18 0.004936001117135472" rpy="0 0 0"/>
+    <mass value="0.0021901450942100275"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component10_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component10_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component12_1">
+  <inertial>
+    <origin xyz="-2.7533531010703883e-15 -9.020562075079397e-17 0.0050000000000000894" rpy="0 0 0"/>
+    <mass value="0.0001855778050383416"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component12_2">
+  <inertial>
+    <origin xyz="-2.768618667658984e-15 -9.020562075079397e-17 0.0050000000000000894" rpy="0 0 0"/>
+    <mass value="0.0001855778050383416"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component12_3">
+  <inertial>
+    <origin xyz="-2.7582103268031233e-15 -9.020562075079397e-17 0.0050000000000000894" rpy="0 0 0"/>
+    <mass value="0.0001855778050383416"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.016 -0.02 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component12_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component13_1">
+  <inertial>
+    <origin xyz="-1.3183898417423734e-16 -3.9898639947466563e-17 0.0050000000000000044" rpy="0 0 0"/>
+    <mass value="0.00018804395527147638"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component13_2">
+  <inertial>
+    <origin xyz="-1.1796119636642288e-16 -3.9898639947466563e-17 0.0050000000000000044" rpy="0 0 0"/>
+    <mass value="0.00018804395527147638"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component13_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008 -0.0062 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component13_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component14_1">
+  <inertial>
+    <origin xyz="5.620504062164855e-16 -1.0408340855860843e-16 0.004999999999999968" rpy="0 0 0"/>
+    <mass value="0.00013625480037697272"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component14_2">
+  <inertial>
+    <origin xyz="5.759281940243e-16 -1.0408340855860843e-16 0.004999999999999968" rpy="0 0 0"/>
+    <mass value="0.00013625480037697272"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component14_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008 -0.0312 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component14_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component15_1">
+  <inertial>
+    <origin xyz="7.077671781985373e-16 3.885780586188048e-16 0.004999999999999963" rpy="0 0 0"/>
+    <mass value="0.0002965545655264604"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component15_2">
+  <inertial>
+    <origin xyz="7.147060721024445e-16 3.885780586188048e-16 0.004999999999999963" rpy="0 0 0"/>
+    <mass value="0.0002965545655264604"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component15_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque255255255"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0135 0.0295 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://plug_test/meshes/Component15_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid19" type="fixed">
+  <origin xyz="-0.008 0.0312 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component8_1"/>
+</joint>
+
+<joint name="Rigid20" type="fixed">
+  <origin xyz="0.008 0.0312 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component8_2"/>
+</joint>
+
+<joint name="Rigid21" type="fixed">
+  <origin xyz="-0.016 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component9_4"/>
+</joint>
+
+<joint name="Rigid22" type="fixed">
+  <origin xyz="-0.008 0.0062 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component9_2"/>
+</joint>
+
+<joint name="Rigid23" type="fixed">
+  <origin xyz="0.0 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component9_1"/>
+</joint>
+
+<joint name="Rigid24" type="fixed">
+  <origin xyz="0.016 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component9_5"/>
+</joint>
+
+<joint name="Rigid25" type="fixed">
+  <origin xyz="0.008 0.0062 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component9_3"/>
+</joint>
+
+<joint name="Rigid26" type="fixed">
+  <origin xyz="-0.0135 -0.0295 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component10_1"/>
+</joint>
+
+<joint name="Rigid27" type="fixed">
+  <origin xyz="0.0135 -0.0295 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component10_2"/>
+</joint>
+
+<joint name="Rigid28" type="fixed">
+  <origin xyz="0.0 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component12_1"/>
+</joint>
+
+<joint name="Rigid29" type="fixed">
+  <origin xyz="-0.016 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component12_2"/>
+</joint>
+
+<joint name="Rigid30" type="fixed">
+  <origin xyz="0.016 0.02 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component12_3"/>
+</joint>
+
+<joint name="Rigid31" type="fixed">
+  <origin xyz="-0.008 0.0062 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component13_1"/>
+</joint>
+
+<joint name="Rigid32" type="fixed">
+  <origin xyz="0.008 0.0062 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component13_2"/>
+</joint>
+
+<joint name="Rigid33" type="fixed">
+  <origin xyz="-0.008 0.0312 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component14_1"/>
+</joint>
+
+<joint name="Rigid34" type="fixed">
+  <origin xyz="0.008 0.0312 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component14_2"/>
+</joint>
+
+<joint name="Rigid35" type="fixed">
+  <origin xyz="0.0135 -0.0295 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component15_1"/>
+</joint>
+
+<joint name="Rigid36" type="fixed">
+  <origin xyz="-0.0135 -0.0295 0.0055" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component15_2"/>
+</joint>
+
+</robot>

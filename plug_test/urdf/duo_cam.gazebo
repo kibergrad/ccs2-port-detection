@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<gazebo>
+		<static>true</static>
+	</gazebo>
+	<xacro:macro name="camera_sensor" params="cam_name">
+		<gazebo reference="${cam_name}_cam">
+			<material>Gazebo/Blue</material>
+			<sensor type="camera" name="camera_${cam_name}">
+				<update_rate>30.0</update_rate>
+				<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+					<alwaysOn>true</alwaysOn>
+					<cameraName>duo_cam/${cam_name}</cameraName>
+					<frameName>${cam_name}_cam</frameName>
+				</plugin>
+			</sensor>
+		</gazebo>
+	</xacro:macro>
+
+	<xacro:camera_sensor cam_name="left" />
+	<xacro:camera_sensor cam_name="right" />
+</robot>

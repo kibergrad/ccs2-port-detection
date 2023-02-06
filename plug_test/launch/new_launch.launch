@@ -1,0 +1,81 @@
+<launch>
+  <!-- Starting Gazebo simulation -->
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="rviz_config" default="$(find plug_test)/rviz/config.rviz"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <include file="$(find yolov5_ros)/launch/yolov5.launch">
+    <arg name="weights" value="$(find plug_test)/93_best_accuracy_latest.pt" />
+    <arg name="input_image_topic" value="/camera/color/image_raw" />
+  </include>
+
+  <!-- Load the URDF's into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro '$(find plug_test)/urdf/camera.xacro'" />
+
+  <param name="plug_desc" command="$(find xacro)/xacro '$(find plug_test)/urdf/plug_socket.xacro'" />
+  <param name="duo_cam_desc" command="$(find xacro)/xacro '$(find plug_test)/urdf/duo_cam.xacro'" />
+  <param name="block_laser_desc" command="$(find xacro)/xacro '$(find plug_test)/urdf/block_laser.xacro'" />
+
+  <!-- Spawn kinect camera -->
+  <node name="kinect_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-sdf -database kinect -model kinect_cam -x 0 -y 0 -z 0.5" />
+
+  <!-- Spawn duo_camera -->
+  <node name="duo_cam_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model duo_cam -param duo_cam_desc -x 0 -y 0 -z 1.0" />
+
+  <!-- Spawn plug model -->
+  <node name="plug_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model ccs2plug -param plug_desc -x 0.471263 -y -0.008892 -z 1.000871 -R 1.096303 -P -0.083314 -Y -1.950861" />
+
+  <!-- Spawn block_laser model -->
+  <!-- <node name="block_laser_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model block_laser -param block_laser_desc -x 0 -y 0 -z 0.75 -R 0 -P 0 -Y 0" /> -->
+
+<!-- z=0.5-1.2 y= -0.5 - 0.5  x=1-1.4 -->
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+
+  <!-- <node name="test_node" pkg="plug_test" type="test_node" output="screen"/> -->
+  <!-- <node name="py_node" pkg="plug_test" type="py_node" output="screen"/> -->
+  <node name="stereo_image_proc" pkg="stereo_image_proc" type="stereo_image_proc">
+    <remap from="left/image_raw" to="/duo_cam/left/image_raw" />
+    <remap from="left/camera_info" to="/duo_cam/left/camera_info" />
+    <remap from="right/image_raw" to="/duo_cam/right/image_raw" />
+    <remap from="right/camera_info" to="/duo_cam/right/camera_info" />
+    <!-- <param name="prefilter_size" value="20" type="int"/> -->
+    <param name="correlation_window_size" value="17" type="int"/>
+    <param name="disparity_range" value="144" type="int"/>
+    <param name="texture_threshold" value="182" type="int "/>
+    <param name="min_disparity" value="-14" type="int"/>
+    <param name="uniqueness_ratio" value="21.0" type="double"/>
+  </node>
+  <!-- <node name="duo_depth_cam_view" pkg="image_view" type="disparity_view">
+    <remap from="image" to="/disparity" />
+  </node> -->
+  <!-- <node name="duo_left_cam_view" pkg="image_view" type="image_view">
+    <remap from="image" to="/right/image_rect" />
+  </node> -->
+  <!-- <node name="duo_cam_disparity" pkg="image_view" type="image_view"/> -->
+  <node name="pixel_to_coords_service" pkg="plug_test" type="get_point_from_pixel.py" output="screen" />
+
+  <node name="static_tf_publisher" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 camera_link map 100" />
+  <node name="camera_link_stereo_left_tf_publisher" pkg="tf" type="static_transform_publisher" args="-0.03 -0.5 0 0 0 0 camera_link left_cam 100" />
+  <node name="camera_link_stereo_right_tf_publisher" pkg="tf" type="static_transform_publisher" args="0.03 -0.5 0 0 0 0 camera_link right_cam 100" />
+  <node name="camera_link_block_laser_tf_publisher" pkg="tf" type="static_transform_publisher" args="0 -0.25 0 0 0 0 camera_link block_laser 100" />
+</launch>
+                                            
